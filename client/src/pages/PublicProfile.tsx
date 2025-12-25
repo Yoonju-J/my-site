@@ -7,16 +7,17 @@ import { Button } from "@/components/ui/button";
 import { useLocation } from "wouter";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-function PetalAnimation({ isActive }: { isActive: boolean }) {
+function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
   if (!isActive) return null;
   
-  const petals = Array.from({ length: 15 }, (_, i) => ({
+  const petals = Array.from({ length: 20 }, (_, i) => ({
     id: i,
-    left: Math.random() * 100,
-    delay: Math.random() * 2,
-    duration: 3 + Math.random() * 2,
-    size: 10 + Math.random() * 15,
-    rotation: Math.random() * 360,
+    startX: 80 + Math.random() * 40,
+    startY: -10 - Math.random() * 20,
+    delay: Math.random() * 3,
+    duration: 4 + Math.random() * 2,
+    size: 8 + Math.random() * 12,
+    swayAmount: 30 + Math.random() * 40,
   }));
 
   return (
@@ -24,22 +25,35 @@ function PetalAnimation({ isActive }: { isActive: boolean }) {
       {petals.map((petal) => (
         <div
           key={petal.id}
-          className="absolute animate-fall"
+          className="absolute animate-cherry-fall"
           style={{
-            left: `${petal.left}%`,
-            top: '-20px',
+            right: `${petal.startX - 100}%`,
+            top: `${petal.startY}%`,
             animationDelay: `${petal.delay}s`,
             animationDuration: `${petal.duration}s`,
+            ['--sway' as string]: `${petal.swayAmount}px`,
           }}
         >
-          <div
-            className="rounded-full bg-gradient-to-br from-pink-200 to-pink-400 opacity-80"
-            style={{
-              width: `${petal.size}px`,
-              height: `${petal.size * 0.6}px`,
-              transform: `rotate(${petal.rotation}deg)`,
-            }}
-          />
+          <svg
+            width={petal.size}
+            height={petal.size}
+            viewBox="0 0 24 24"
+            className="animate-cherry-spin"
+            style={{ animationDuration: `${2 + Math.random() * 2}s` }}
+          >
+            <path
+              d="M12 2C12 2 8 6 8 10C8 12 10 14 12 14C14 14 16 12 16 10C16 6 12 2 12 2Z"
+              fill="url(#petalGradient)"
+              opacity="0.85"
+            />
+            <defs>
+              <linearGradient id="petalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#fce7f3" />
+                <stop offset="50%" stopColor="#fbcfe8" />
+                <stop offset="100%" stopColor="#f9a8d4" />
+              </linearGradient>
+            </defs>
+          </svg>
         </div>
       ))}
     </div>
@@ -123,7 +137,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
         fontFamily: profile.font === 'Inter' ? 'sans-serif' : profile.font,
       }}
     >
-      <PetalAnimation isActive={showPetals} />
+      <CherryBlossomAnimation isActive={showPetals} />
       <div className="max-w-xl mx-auto px-4 py-16 flex flex-col items-center">
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-10 animate-in zoom-in-50 duration-500">
