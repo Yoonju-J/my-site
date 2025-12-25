@@ -47,9 +47,17 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
           <h2 className="text-lg font-bold tracking-tight mb-1">@{profile.username}</h2>
-          {profile.bio && (
-            <p className="text-xs opacity-90 max-w-[85%] leading-relaxed" style={{ color: '#636363' }}>{profile.bio}</p>
-          )}
+          {profile.bio && (() => {
+            const lines = profile.bio.split('\n');
+            const tagline = lines[0];
+            const description = lines.slice(1).join('\n').trim();
+            return (
+              <>
+                {tagline && <p className="text-sm opacity-90 max-w-[85%] leading-relaxed" style={{ color: '#000000' }}>{tagline}</p>}
+                {description && <p className="text-xs opacity-90 max-w-[85%] leading-relaxed mt-1" style={{ color: '#636363' }}>{description}</p>}
+              </>
+            );
+          })()}
         </div>
 
         <div className="w-full space-y-3 flex-1">

@@ -48,9 +48,17 @@ export default function PublicProfile({ params }: PublicProfileProps) {
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
           <h1 className="text-2xl font-bold mb-2">@{profile.username}</h1>
-          {profile.bio && (
-             <p className="text-sm opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap" style={{ color: '#636363' }}>{profile.bio}</p>
-          )}
+          {profile.bio && (() => {
+            const lines = profile.bio.split('\n');
+            const tagline = lines[0];
+            const description = lines.slice(1).join('\n').trim();
+            return (
+              <>
+                {tagline && <p className="text-lg opacity-90 max-w-sm leading-relaxed" style={{ color: '#000000' }}>{tagline}</p>}
+                {description && <p className="text-sm opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap mt-2" style={{ color: '#636363' }}>{description}</p>}
+              </>
+            );
+          })()}
         </div>
 
         {/* Links */}
