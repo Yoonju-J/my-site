@@ -4,14 +4,17 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import NotFound from "@/pages/not-found";
-import Landing from "@/pages/Landing";
 import Dashboard from "@/pages/Dashboard";
 import PublicProfile from "@/pages/PublicProfile";
+
+function DefaultProfile() {
+  return <PublicProfile params={{ username: "yoonjujung" }} />;
+}
 
 function Router() {
   return (
     <Switch>
-      <Route path="/" component={Landing} />
+      <Route path="/" component={DefaultProfile} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/public/:username" component={PublicProfile} />
       <Route component={NotFound} />
