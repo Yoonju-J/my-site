@@ -104,7 +104,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
                 animationDelay: `${i * 100}ms`
               }}
             >
-              <span className="opacity-80">{getLinkIcon(link.url, link.title, link.icon)}</span>
+              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-pink-100 text-pink-500">{getLinkIcon(link.url, link.title, link.icon)}</span>
               <span className="flex-1 text-left truncate">{link.title}</span>
             </a>
           ))}

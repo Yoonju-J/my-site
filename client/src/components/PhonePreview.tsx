@@ -100,7 +100,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
               )}
               style={buttonStyle}
             >
-              <span className="opacity-80">{getLinkIcon(link.url, link.title, link.icon)}</span>
+              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-pink-100 text-pink-500">{getLinkIcon(link.url, link.title, link.icon)}</span>
               <span className="truncate flex-1 text-left">{link.title}</span>
             </a>
           ))}
