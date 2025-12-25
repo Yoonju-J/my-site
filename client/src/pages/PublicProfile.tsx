@@ -47,11 +47,11 @@ export default function PublicProfile({ params }: PublicProfileProps) {
             <AvatarImage src={`https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`} />
             <AvatarFallback>{profile.username.slice(0, 2).toUpperCase()}</AvatarFallback>
           </Avatar>
-          {profile.displayName && (
-            <h1 className="text-2xl font-bold mb-1">{profile.displayName}</h1>
-          )}
           {profile.showUsername && (
             <p className="text-lg opacity-70 mb-2">@{profile.username}</p>
+          )}
+          {profile.displayName && (
+            <h1 className="text-2xl font-bold mb-2" style={{ color: '#000000' }}>{profile.displayName}</h1>
           )}
           {profile.bio && (() => {
             const lines = profile.bio.split('\n');
@@ -59,7 +59,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
             const description = lines.slice(1).join('\n').trim();
             return (
               <>
-                {tagline && <p className="text-lg opacity-90 max-w-sm leading-relaxed" style={{ color: '#000000' }}>{tagline}</p>}
+                {tagline && <p className="text-base opacity-90 max-w-sm leading-relaxed" style={{ color: '#000000' }}>{tagline}</p>}
                 {description && <p className="text-sm opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap mt-2" style={{ color: '#636363' }}>{description}</p>}
               </>
             );
