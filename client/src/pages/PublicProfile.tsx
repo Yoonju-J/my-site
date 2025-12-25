@@ -153,15 +153,12 @@ export default function PublicProfile({ params }: PublicProfileProps) {
           {/* Magnified profile picture modal */}
           <Dialog open={showImageModal} onOpenChange={setShowImageModal}>
             <DialogContent className="max-w-md p-0 bg-transparent border-none shadow-none">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-pink-300 via-purple-300 to-pink-300 blur-2xl opacity-70 scale-105" />
-                <img 
-                  src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`}
-                  alt={profile.displayName || profile.username}
-                  className="relative w-full h-auto rounded-full border-4 border-white shadow-2xl"
-                  data-testid="img-magnified-profile"
-                />
-              </div>
+              <img 
+                src={profile.avatarUrl || `https://api.dicebear.com/7.x/initials/svg?seed=${profile.username}`}
+                alt={profile.displayName || profile.username}
+                className="w-full h-auto rounded-full shadow-2xl"
+                data-testid="img-magnified-profile"
+              />
             </DialogContent>
           </Dialog>
           {profile.showUsername && (
