@@ -100,7 +100,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
               target="_blank"
               rel="noopener noreferrer"
               className={cn(
-                "block w-full py-3 px-4 rounded-xl text-sm font-semibold transition-colors duration-300 shadow-md flex items-center gap-3 group hover:bg-pink-100",
+                "block w-full py-3 px-4 rounded-xl text-sm font-semibold transition-colors duration-300 shadow-md flex items-center gap-3 group hover:!bg-pink-100",
               )}
               style={buttonStyle}
             >

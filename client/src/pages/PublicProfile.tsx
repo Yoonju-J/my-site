@@ -119,7 +119,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:bg-pink-100"
+              className="block w-full p-4 rounded-xl text-center font-bold text-lg transition-colors duration-300 shadow-lg flex items-center gap-4 group animate-in slide-in-from-bottom-4 fill-mode-backwards hover:!bg-pink-100"
               style={{ 
                 backgroundColor: profile.buttonColor,
                 color: profile.buttonTextColor,
