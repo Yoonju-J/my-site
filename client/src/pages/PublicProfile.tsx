@@ -49,7 +49,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
           </Avatar>
           <h1 className="text-2xl font-bold mb-2">@{profile.username}</h1>
           {profile.bio && (
-             <p className="text-lg opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap">{profile.bio}</p>
+             <p className="text-sm opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap" style={{ color: '#636363' }}>{profile.bio}</p>
           )}
         </div>
 

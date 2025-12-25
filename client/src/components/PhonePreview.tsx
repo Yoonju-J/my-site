@@ -48,7 +48,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
           </Avatar>
           <h2 className="text-lg font-bold tracking-tight mb-1">@{profile.username}</h2>
           {profile.bio && (
-            <p className="text-sm opacity-90 max-w-[85%] leading-relaxed">{profile.bio}</p>
+            <p className="text-xs opacity-90 max-w-[85%] leading-relaxed" style={{ color: '#636363' }}>{profile.bio}</p>
           )}
         </div>
 
