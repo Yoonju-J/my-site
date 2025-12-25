@@ -59,7 +59,7 @@ export default function PublicProfile({ params }: PublicProfileProps) {
             const description = lines.slice(1).join('\n').trim();
             return (
               <>
-                {tagline && <p className="text-base opacity-90 max-w-sm leading-relaxed" style={{ color: '#000000' }}>{tagline}</p>}
+                {tagline && <p className="text-base opacity-90 leading-relaxed whitespace-nowrap" style={{ color: '#000000' }}>{tagline}</p>}
                 {description && <p className="text-sm opacity-90 max-w-sm leading-relaxed whitespace-pre-wrap mt-2" style={{ color: '#636363' }}>{description}</p>}
               </>
             );

@@ -58,7 +58,7 @@ export function PhonePreview({ profile, links }: PhonePreviewProps) {
             const description = lines.slice(1).join('\n').trim();
             return (
               <>
-                {tagline && <p className="text-sm opacity-90 max-w-[85%] leading-relaxed" style={{ color: '#000000' }}>{tagline}</p>}
+                {tagline && <p className="text-xs opacity-90 leading-relaxed whitespace-nowrap" style={{ color: '#000000' }}>{tagline}</p>}
                 {description && <p className="text-xs opacity-90 max-w-[85%] leading-relaxed mt-1" style={{ color: '#636363' }}>{description}</p>}
               </>
             );
