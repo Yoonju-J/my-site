@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Instagram, Linkedin, Globe, BookOpen } from "lucide-react";
-import { SiThreads, SiObsidian } from "react-icons/si";
+import { SiThreads, SiObsidian, SiGithub } from "react-icons/si";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Hardcoded profile data
@@ -24,6 +24,7 @@ const links = [
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin" },
   { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads" },
   { id: 6, title: "Personal Wiki", url: "https://publish.obsidian.md/mediair-03", icon: "obsidian" },
+  { id: 7, title: "Github", url: "https://github.com/Yoonju-J", icon: "github" },
 ];
 
 function CherryBlossomAnimation({ isActive }: { isActive: boolean }) {
@@ -84,6 +85,7 @@ function getLinkIcon(iconType: string) {
     case "book": return <BookOpen className="w-5 h-5" />;
     case "threads": return <SiThreads className="w-5 h-5" />;
     case "obsidian": return <SiObsidian className="w-5 h-5" />;
+    case "github": return <SiGithub className="w-5 h-5" />;
     default: return <Globe className="w-5 h-5" />;
   }
 }
