@@ -20,7 +20,7 @@ const profile = {
 const links = [
   { id: 1, title: "Homepage", url: "https://example.com", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
   { id: 2, title: "The Rovodoc", url: "https://www.instagram.com/physicalolo/", icon: "book", tooltip: "Physical AI Team\nfor Medical/Engineering Students\nWorldwide" },
-  { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Communication" },
+  { id: 3, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
   { id: 4, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing academic insights\nand professional experiences" },
   { id: 5, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "" },
   { id: 6, title: "Github", url: "https://github.com/Yoonju-J", icon: "github", tooltip: "" },
