@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Instagram, Linkedin, Globe, BookOpen, Palette, Heart, HeartPulse, Sparkles } from "lucide-react";
+import { Instagram, Linkedin, PenLine, BookOpen, Palette, Heart, HeartPulse, Sparkles } from "lucide-react";
 import { SiThreads, SiObsidian, SiGithub } from "react-icons/si";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
@@ -18,7 +18,7 @@ const profile = {
 };
 
 const links = [
-  { id: 1, title: "Homepage", url: "https://substack.com/@yoonju", icon: "globe", tooltip: "Personal Blog, Portfolio, and CV" },
+  { id: 1, title: "Homepage", url: "https://substack.com/@yoonju", icon: "penline", tooltip: "Personal Blog, Portfolio, and CV" },
   { id: 2, title: "Instagram", url: "https://www.instagram.com/yoonjujung_/", icon: "instagram", tooltip: "Sharing personal experiences" },
   { id: 3, title: "LinkedIn", url: "https://www.linkedin.com/in/yoonju-jung-a80374315/", icon: "linkedin", tooltip: "Sharing professional experiences" },
   { id: 4, title: "Threads", url: "https://www.threads.com/@yoonjujung_", icon: "threads", tooltip: "Sharing my Insights\nand Creative Ideas" },
@@ -85,6 +85,7 @@ function getLinkIcon(iconType: string) {
     case "linkedin": return <Linkedin className="w-5 h-5" />;
     case "book": return <BookOpen className="w-5 h-5" />;
     case "sparkles": return <Sparkles className="w-5 h-5" />;
+    case "penline": return <PenLine className="w-5 h-5" />;
     case "threads": return <SiThreads className="w-5 h-5" />;
     case "obsidian": return <SiObsidian className="w-5 h-5" />;
     case "github": return <SiGithub className="w-5 h-5" />;
